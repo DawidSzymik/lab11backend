@@ -19,7 +19,7 @@
     "amount": 12,
     "description": "Procesor 16-rdzeniowy z architekturą Zen 4",
     "date": "2024-01-20",
-    "image": "/images/products/cpu2.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 3,
@@ -30,7 +30,7 @@
     "amount": 8,
     "description": "Topowa karta graficzna z 24GB VRAM",
     "date": "2024-02-01",
-    "image": "/images/products/gpu1.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 4,
@@ -41,7 +41,7 @@
     "amount": 10,
     "description": "Wydajna karta z 24GB pamięci GDDR6",
     "date": "2024-02-05",
-    "image": "/images/products/gpu2.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 5,
@@ -52,7 +52,7 @@
     "amount": 25,
     "description": "Pamięć DDR5 6000MHz CL36",
     "date": "2024-01-10",
-    "image": "/images/products/ram1.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 6,
@@ -63,7 +63,7 @@
     "amount": 18,
     "description": "Pamięć DDR5 6400MHz z podświetleniem RGB",
     "date": "2024-01-25",
-    "image": "/images/products/ram2.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 7,
@@ -74,7 +74,7 @@
     "amount": 30,
     "description": "Dysk NVMe PCIe 4.0 z prędkością do 7450 MB/s",
     "date": "2024-02-10",
-    "image": "/images/products/ssd1.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 8,
@@ -85,7 +85,7 @@
     "amount": 22,
     "description": "Szybki dysk NVMe dla graczy",
     "date": "2024-02-15",
-    "image": "/images/products/ssd2.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 9,
@@ -96,7 +96,7 @@
     "amount": 20,
     "description": "16-rdzeniowy procesor do gier i pracy",
     "date": "2024-01-18",
-    "image": "/images/products/cpu3.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 10,
@@ -107,7 +107,7 @@
     "amount": 14,
     "description": "Procesor z technologią 3D V-Cache dla graczy",
     "date": "2024-01-22",
-    "image": "/images/products/cpu4.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 11,
@@ -118,7 +118,7 @@
     "amount": 12,
     "description": "Wydajna karta z 16GB pamięci GDDR6X",
     "date": "2024-02-08",
-    "image": "/images/products/gpu3.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 12,
@@ -129,7 +129,7 @@
     "amount": 16,
     "description": "Karta graficzna do gier w 1440p",
     "date": "2024-02-12",
-    "image": "/images/products/gpu4.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 13,
@@ -140,7 +140,7 @@
     "amount": 28,
     "description": "Pamięć DDR5 5600MHz",
     "date": "2024-01-12",
-    "image": "/images/products/ram3.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 14,
@@ -151,7 +151,7 @@
     "amount": 20,
     "description": "Pamięć DDR5 5600MHz CL46",
     "date": "2024-01-28",
-    "image": "/images/products/ram4.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 15,
@@ -162,7 +162,7 @@
     "amount": 25,
     "description": "Dysk NVMe PCIe 4.0",
     "date": "2024-02-18",
-    "image": "/images/products/ssd3.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 16,
@@ -173,7 +173,7 @@
     "amount": 18,
     "description": "Dysk NVMe do PS5 i PC",
     "date": "2024-02-20",
-    "image": "/images/products/ssd4.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 17,
@@ -184,7 +184,7 @@
     "amount": 22,
     "description": "14-rdzeniowy procesor średniej klasy",
     "date": "2024-01-16",
-    "image": "/images/products/cpu5.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 18,
@@ -195,7 +195,7 @@
     "amount": 19,
     "description": "6-rdzeniowy procesor do gier",
     "date": "2024-01-24",
-    "image": "/images/products/cpu6.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 19,
@@ -206,7 +206,7 @@
     "amount": 14,
     "description": "Karta z 12GB GDDR6X",
     "date": "2024-02-03",
-    "image": "/images/products/gpu5.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 20,
@@ -217,7 +217,7 @@
     "amount": 17,
     "description": "12GB GDDR6 dla graczy",
     "date": "2024-02-14",
-    "image": "/images/products/gpu6.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 21,
@@ -228,7 +228,7 @@
     "amount": 24,
     "description": "Pamięć DDR5 6000MHz z RGB",
     "date": "2024-01-14",
-    "image": "/images/products/ram5.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 22,
@@ -239,7 +239,7 @@
     "amount": 16,
     "description": "Pamięć DDR5 6400MHz",
     "date": "2024-01-30",
-    "image": "/images/products/ram6.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 23,
@@ -250,7 +250,7 @@
     "amount": 21,
     "description": "Dysk NVMe PCIe 4.0 do 7000 MB/s",
     "date": "2024-02-22",
-    "image": "/images/products/ssd5.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 24,
@@ -261,7 +261,7 @@
     "amount": 19,
     "description": "Szybki dysk z PCIe 4.0",
     "date": "2024-02-25",
-    "image": "/images/products/ssd6.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 25,
@@ -272,7 +272,7 @@
     "amount": 11,
     "description": "16-rdzeniowy procesor poprzedniej generacji",
     "date": "2024-01-08",
-    "image": "/images/products/cpu7.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 26,
@@ -283,7 +283,7 @@
     "amount": 9,
     "description": "16-rdzeniowy procesor Zen 3",
     "date": "2024-01-05",
-    "image": "/images/products/cpu8.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 27,
@@ -294,7 +294,7 @@
     "amount": 18,
     "description": "12GB GDDR6X dla Full HD i 1440p",
     "date": "2024-02-06",
-    "image": "/images/products/gpu7.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 28,
@@ -305,7 +305,7 @@
     "amount": 20,
     "description": "8GB GDDR6 dla Full HD",
     "date": "2024-02-16",
-    "image": "/images/products/gpu8.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 29,
@@ -316,7 +316,7 @@
     "amount": 12,
     "description": "Pamięć DDR5 6200MHz premium",
     "date": "2024-01-17",
-    "image": "/images/products/ram7.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 30,
@@ -327,7 +327,7 @@
     "amount": 26,
     "description": "Pamięć DDR5 5200MHz",
     "date": "2024-01-11",
-    "image": "/images/products/ram8.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 31,
@@ -338,7 +338,7 @@
     "amount": 28,
     "description": "Dysk NVMe PCIe 4.0",
     "date": "2024-02-11",
-    "image": "/images/products/ssd7.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 32,
@@ -349,7 +349,7 @@
     "amount": 32,
     "description": "Ekonomiczny dysk NVMe",
     "date": "2024-02-13",
-    "image": "/images/products/ssd8.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 33,
@@ -360,7 +360,7 @@
     "amount": 15,
     "description": "12-rdzeniowy procesor 12. generacji",
     "date": "2024-01-09",
-    "image": "/images/products/cpu9.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 34,
@@ -371,7 +371,7 @@
     "amount": 13,
     "description": "8-rdzeniowy procesor z 3D V-Cache",
     "date": "2024-01-06",
-    "image": "/images/products/cpu10.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 35,
@@ -382,7 +382,7 @@
     "amount": 22,
     "description": "8GB GDDR6 dla 1080p",
     "date": "2024-02-07",
-    "image": "/images/products/gpu9.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 36,
@@ -393,7 +393,7 @@
     "amount": 14,
     "description": "12GB GDDR6 poprzedniej generacji",
     "date": "2024-02-09",
-    "image": "/images/products/gpu10.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 37,
@@ -404,7 +404,7 @@
     "amount": 21,
     "description": "Pamięć DDR5 6400MHz",
     "date": "2024-01-19",
-    "image": "/images/products/ram9.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 38,
@@ -415,7 +415,7 @@
     "amount": 10,
     "description": "Pamięć DDR5 6800MHz dla overclockerów",
     "date": "2024-02-02",
-    "image": "/images/products/ram10.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 39,
@@ -426,7 +426,7 @@
     "amount": 17,
     "description": "Dysk NVMe z radiatorem",
     "date": "2024-02-23",
-    "image": "/images/products/ssd9.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 40,
@@ -437,7 +437,7 @@
     "amount": 20,
     "description": "Dysk dla graczy z radiatorem",
     "date": "2024-02-26",
-    "image": "/images/products/ssd10.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 41,
@@ -448,7 +448,7 @@
     "amount": 17,
     "description": "10-rdzeniowy procesor 12. generacji",
     "date": "2024-01-07",
-    "image": "/images/products/cpu11.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 42,
@@ -459,7 +459,7 @@
     "amount": 23,
     "description": "6-rdzeniowy procesor Zen 3",
     "date": "2024-01-04",
-    "image": "/images/products/cpu12.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 43,
@@ -470,7 +470,7 @@
     "amount": 24,
     "description": "8GB GDDR6 dla budżetowych graczy",
     "date": "2024-02-04",
-    "image": "/images/products/gpu11.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 44,
@@ -481,7 +481,7 @@
     "amount": 18,
     "description": "8GB GDDR6 dla 1080p",
     "date": "2024-02-17",
-    "image": "/images/products/gpu12.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 45,
@@ -492,7 +492,7 @@
     "amount": 22,
     "description": "Pamięć DDR5 5600MHz z RGB",
     "date": "2024-01-21",
-    "image": "/images/products/ram11.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 46,
@@ -503,7 +503,7 @@
     "amount": 15,
     "description": "Pamięć DDR5 5200MHz",
     "date": "2024-01-27",
-    "image": "/images/products/ram12.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 47,
@@ -514,7 +514,7 @@
     "amount": 16,
     "description": "Dysk NVMe PCIe 3.0",
     "date": "2024-02-19",
-    "image": "/images/products/ssd11.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 48,
@@ -525,7 +525,7 @@
     "amount": 24,
     "description": "Dysk NVMe z dobrym stosunkiem ceny do wydajności",
     "date": "2024-02-21",
-    "image": "/images/products/ssd12.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 49,
@@ -536,7 +536,7 @@
     "amount": 28,
     "description": "4-rdzeniowy procesor budżetowy",
     "date": "2024-01-13",
-    "image": "/images/products/cpu13.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 50,
@@ -547,7 +547,7 @@
     "amount": 30,
     "description": "4-rdzeniowy procesor dla podstawowych zastosowań",
     "date": "2024-01-03",
-    "image": "/images/products/cpu14.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 51,
@@ -558,7 +558,7 @@
     "amount": 12,
     "description": "6GB GDDR6 budżetowa karta",
     "date": "2024-02-02",
-    "image": "/images/products/gpu13.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 52,
@@ -569,7 +569,7 @@
     "amount": 21,
     "description": "4GB GDDR6 dla podstawowych graczy",
     "date": "2024-02-10",
-    "image": "/images/products/gpu14.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 53,
@@ -580,7 +580,7 @@
     "amount": 35,
     "description": "Pamięć DDR5 4800MHz budżetowa",
     "date": "2024-01-15",
-    "image": "/images/products/ram13.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 54,
@@ -591,7 +591,7 @@
     "amount": 40,
     "description": "Pamięć DDR5 4800MHz niskoprofilowa",
     "date": "2024-01-23",
-    "image": "/images/products/ram14.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 55,
@@ -602,7 +602,7 @@
     "amount": 27,
     "description": "Dysk NVMe PCIe 4.0 ekonomiczny",
     "date": "2024-02-24",
-    "image": "/images/products/ssd13.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 56,
@@ -613,7 +613,7 @@
     "amount": 19,
     "description": "Dysk NVMe z dobrą wydajnością",
     "date": "2024-02-27",
-    "image": "/images/products/ssd14.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 57,
@@ -624,7 +624,7 @@
     "amount": 25,
     "description": "2-rdzeniowy procesor dla biura",
     "date": "2024-01-26",
-    "image": "/images/products/cpu15.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 58,
@@ -635,7 +635,7 @@
     "amount": 22,
     "description": "2-rdzeniowy procesor z grafiką zintegrowaną",
     "date": "2024-01-02",
-    "image": "/images/products/cpu16.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 59,
@@ -646,7 +646,7 @@
     "amount": 16,
     "description": "12GB GDDR6 poprzedniej generacji",
     "date": "2024-02-05",
-    "image": "/images/products/gpu15.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 60,
@@ -657,7 +657,7 @@
     "amount": 19,
     "description": "8GB GDDR6 dla 1080p",
     "date": "2024-02-15",
-    "image": "/images/products/gpu16.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 61,
@@ -668,7 +668,7 @@
     "amount": 45,
     "description": "Pamięć DDR5 4800MHz podstawowa",
     "date": "2024-01-29",
-    "image": "/images/products/ram15.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 62,
@@ -679,7 +679,7 @@
     "amount": 50,
     "description": "Pamięć DDR5 4800MHz ekonomiczna",
     "date": "2024-01-31",
-    "image": "/images/products/ram16.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 63,
@@ -690,7 +690,7 @@
     "amount": 30,
     "description": "Dysk SATA SSD budżetowy",
     "date": "2024-02-28",
-    "image": "/images/products/ssd15.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 64,
@@ -701,7 +701,7 @@
     "amount": 35,
     "description": "Dysk SATA SSD podstawowy",
     "date": "2024-02-12",
-    "image": "/images/products/ssd16.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 65,
@@ -712,7 +712,7 @@
     "amount": 8,
     "description": "24-rdzeniowy procesor najnowszej generacji",
     "date": "2024-03-01",
-    "image": "/images/products/cpu17.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 66,
@@ -723,7 +723,7 @@
     "amount": 6,
     "description": "16-rdzeniowy procesor z 3D V-Cache",
     "date": "2024-03-05",
-    "image": "/images/products/cpu18.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 67,
@@ -734,7 +734,7 @@
     "amount": 3,
     "description": "Flagowa karta graficzna z 24GB VRAM",
     "date": "2024-03-10",
-    "image": "/images/products/gpu17.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 68,
@@ -745,7 +745,7 @@
     "amount": 7,
     "description": "Topowa karta AMD z 32GB VRAM",
     "date": "2024-03-12",
-    "image": "/images/products/gpu18.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 69,
@@ -756,7 +756,7 @@
     "amount": 5,
     "description": "Pamięć DDR5 7200MHz premium",
     "date": "2024-03-08",
-    "image": "/images/products/ram17.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 70,
@@ -767,7 +767,7 @@
     "amount": 3,
     "description": "Pamięć DDR5 6800MHz z kryształowym RGB",
     "date": "2024-03-15",
-    "image": "/images/products/ram18.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 71,
@@ -778,7 +778,7 @@
     "amount": 10,
     "description": "Dysk NVMe PCIe 5.0 z prędkością do 14000 MB/s",
     "date": "2024-03-18",
-    "image": "/images/products/ssd17.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 72,
@@ -789,7 +789,7 @@
     "amount": 8,
     "description": "Dysk NVMe PCIe 5.0 dla profesjonalistów",
     "date": "2024-03-20",
-    "image": "/images/products/ssd18.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 73,
@@ -800,7 +800,7 @@
     "amount": 12,
     "description": "20-rdzeniowy procesor 14. generacji",
     "date": "2024-03-03",
-    "image": "/images/products/cpu19.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 74,
@@ -811,7 +811,7 @@
     "amount": 14,
     "description": "8-rdzeniowy procesor Zen 4",
     "date": "2024-03-07",
-    "image": "/images/products/cpu20.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 75,
@@ -822,7 +822,7 @@
     "amount": 9,
     "description": "16GB GDDR6X odświeżona wersja",
     "date": "2024-03-11",
-    "image": "/images/products/gpu19.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 76,
@@ -833,7 +833,7 @@
     "amount": 11,
     "description": "16GB GDDR6 zbalansowana karta",
     "date": "2024-03-14",
-    "image": "/images/products/gpu20.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 77,
@@ -844,7 +844,7 @@
     "amount": 13,
     "description": "Pamięć DDR5 7200MHz dla workstation",
     "date": "2024-03-16",
-    "image": "/images/products/ram19.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 78,
@@ -855,7 +855,7 @@
     "amount": 6,
     "description": "Pamięć DDR5 6400MHz dla entuzjastów",
     "date": "2024-03-19",
-    "image": "/images/products/ram20.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 79,
@@ -866,7 +866,7 @@
     "amount": 7,
     "description": "Dysk NVMe PCIe 5.0 do 10000 MB/s",
     "date": "2024-03-22",
-    "image": "/images/products/ssd19.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 80,
@@ -877,7 +877,7 @@
     "amount": 15,
     "description": "Dysk NVMe PCIe 4.0 dla graczy",
     "date": "2024-03-25",
-    "image": "/images/products/ssd20.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 81,
@@ -888,7 +888,7 @@
     "amount": 16,
     "description": "14-rdzeniowy procesor 14. generacji",
     "date": "2024-03-04",
-    "image": "/images/products/cpu21.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 82,
@@ -899,7 +899,7 @@
     "amount": 18,
     "description": "6-rdzeniowy procesor energooszczędny",
     "date": "2024-03-06",
-    "image": "/images/products/cpu22.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 83,
@@ -910,7 +910,7 @@
     "amount": 13,
     "description": "12GB GDDR6X ulepszona wersja",
     "date": "2024-03-09",
-    "image": "/images/products/gpu21.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 84,
@@ -921,7 +921,7 @@
     "amount": 14,
     "description": "16GB GDDR6 odświeżona",
     "date": "2024-03-13",
-    "image": "/images/products/gpu22.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 85,
@@ -932,7 +932,7 @@
     "amount": 11,
     "description": "Pamięć DDR5 6800MHz niskoprofilowa",
     "date": "2024-03-17",
-    "image": "/images/products/ram21.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 86,
@@ -943,7 +943,7 @@
     "amount": 4,
     "description": "Pamięć DDR5 7600MHz ekstremalnie szybka",
     "date": "2024-03-21",
-    "image": "/images/products/ram22.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 87,
@@ -954,7 +954,7 @@
     "amount": 9,
     "description": "Dysk NVMe PCIe 5.0 z radiatorem",
     "date": "2024-03-23",
-    "image": "/images/products/ssd21.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 88,
@@ -965,7 +965,7 @@
     "amount": 5,
     "description": "Dysk NVMe PCIe 5.0 premium",
     "date": "2024-03-26",
-    "image": "/images/products/ssd22.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 89,
@@ -976,7 +976,7 @@
     "amount": 20,
     "description": "4-rdzeniowy procesor bez grafiki",
     "date": "2024-03-02",
-    "image": "/images/products/cpu23.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 90,
@@ -987,7 +987,7 @@
     "amount": 17,
     "description": "4-rdzeniowy procesor z mocną grafiką",
     "date": "2024-03-04",
-    "image": "/images/products/cpu24.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 91,
@@ -998,7 +998,7 @@
     "amount": 22,
     "description": "6GB GDDR6 karta entry-level",
     "date": "2024-03-15",
-    "image": "/images/products/gpu23.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 92,
@@ -1009,7 +1009,7 @@
     "amount": 20,
     "description": "8GB GDDR6 budżetowa karta nowej generacji",
     "date": "2024-03-17",
-    "image": "/images/products/gpu24.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 93,
@@ -1020,7 +1020,7 @@
     "amount": 19,
     "description": "Pamięć DDR5 6400MHz z RGB",
     "date": "2024-03-20",
-    "image": "/images/products/ram23.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 94,
@@ -1031,7 +1031,7 @@
     "amount": 14,
     "description": "Pamięć DDR5 6000MHz z oświetleniem",
     "date": "2024-03-24",
-    "image": "/images/products/ram24.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 95,
@@ -1042,7 +1042,7 @@
     "amount": 16,
     "description": "Dysk NVMe PCIe 4.0 ulepszona wersja",
     "date": "2024-03-27",
-    "image": "/images/products/ssd23.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 96,
@@ -1053,7 +1053,7 @@
     "amount": 4,
     "description": "Dysk NVMe o ogromnej pojemności",
     "date": "2024-03-28",
-    "image": "/images/products/ssd24.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 97,
@@ -1064,7 +1064,7 @@
     "amount": 2,
     "description": "18-rdzeniowy procesor workstation",
     "date": "2024-03-29",
-    "image": "/images/products/cpu25.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 98,
@@ -1075,7 +1075,7 @@
     "amount": 1,
     "description": "64-rdzeniowy procesor HEDT",
     "date": "2024-03-30",
-    "image": "/images/products/cpu26.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 99,
@@ -1086,7 +1086,7 @@
     "amount": 2,
     "description": "48GB karta profesjonalna dla AI i renderingu",
     "date": "2024-03-31",
-    "image": "/images/products/gpu25.jpg"
+    "image": "/images/products/cpu1.jpg"
   },
   {
     "id": 100,
@@ -1097,6 +1097,6 @@
     "amount": 0,
     "description": "48GB karta workstation dla profesjonalistów",
     "date": "2024-04-01",
-    "image": "/images/products/gpu26.jpg"
+    "image": "/images/products/cpu1.jpg"
   }
 ]
