@@ -1,0 +1,41 @@
+import Link from "next/link";
+import Image from "next/image";
+import NavLink from "./nav-link";
+
+export default function MainHeader() {
+  return (
+    <header className="bg-blue-900 text-white shadow-lg">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex items-center justify-between">
+          <Link href="/" className="flex items-center hover:opacity-80 transition">
+            <Image
+              src="/pk-logo.svg"
+              alt="Politechnika Krakowska"
+              width={50}
+              height={50}
+              className="mr-3"
+            />
+            <span className="text-xl font-bold">Computer Shop</span>
+          </Link>
+
+          <nav>
+            <ul className="flex space-x-6">
+              <li>
+                <NavLink href="/">Home</NavLink>
+              </li>
+              <li>
+                <NavLink href="/about">About</NavLink>
+              </li>
+              <li>
+                <NavLink href="/product-list">Products</NavLink>
+              </li>
+              <li>
+                <NavLink href="/contact">Contact</NavLink>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+  );
+}
