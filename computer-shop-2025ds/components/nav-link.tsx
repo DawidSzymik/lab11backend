@@ -19,7 +19,11 @@ export default function NavLink({
   return (
     <Link
       href={href}
-      className={isActive ? "active" : ""}
+      className={`text-white transition-colors ${
+        isActive 
+          ? 'text-blue-300 font-bold' 
+          : 'hover:text-blue-300'
+      }`}
     >
       {children}
     </Link>

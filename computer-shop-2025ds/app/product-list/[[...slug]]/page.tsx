@@ -11,12 +11,10 @@ export default async function CatchAllProductPage({
 }) {
   const { slug } = await params;
 
-  // Przypadek 0: /product-list (brak slug)
   if (!slug || slug.length === 0) {
     return <MainProductList />;
   }
 
-  // Przypadek 1: /product-list/5 lub /product-list/GPU
   if (slug.length === 1) {
     const maybeId = parseInt(slug[0]);
     
@@ -40,7 +38,6 @@ export default async function CatchAllProductPage({
     return <CategoryList category={category} products={products} />;
   }
 
-  // Przypadek 2: /product-list/GPU/1
   if (slug.length === 2) {
     const category = slug[0];
     const productId = parseInt(slug[1]);
