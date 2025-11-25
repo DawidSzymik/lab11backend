@@ -12,16 +12,14 @@ export default function NavLink({
 }) {
   const path = usePathname();
   
+  const isActive = href === "/" 
+    ? path === href 
+    : path.startsWith(href);
+  
   return (
     <Link
       href={href}
-      className={`hover:text-blue-300 transition ${
-        path.startsWith(href) && href !== "/" 
-          ? "text-blue-300 font-bold" 
-          : path === href 
-          ? "text-blue-300 font-bold" 
-          : ""
-      }`}
+      className={isActive ? "active" : ""}
     >
       {children}
     </Link>

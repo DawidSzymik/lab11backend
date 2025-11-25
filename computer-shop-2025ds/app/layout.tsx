@@ -15,9 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pl">
-      <body className="flex flex-col min-h-screen">
+      <body style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', margin: 0 }}>
         <MainHeader />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main style={{ flexGrow: 1, maxWidth: '1200px', margin: '0 auto', padding: '2rem 1rem', width: '100%' }}>
           {children}
         </main>
         <Footer />

@@ -113,3 +113,7 @@ ul {
 }
 
 .logo { width: 200px; height: 200px; }
+a.active {
+  color: #93c5fd !important;
+  font-weight: bold;
+}
