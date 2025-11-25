@@ -1,30 +1,20 @@
 import Link from "next/link";
 import Image from "next/image";
-import { notFound } from "next/navigation";
-import { getProductById } from '@/lib/products';
+import type { Product } from '@/lib/products';
 
-export default async function ProductDetailPage({
-  params,
-}: {
-  params: Promise<{ "product-id": string }>;
+export default function ProductDetail({ 
+  product, 
+  backLink, 
+  backText 
+}: { 
+  product: Product; 
+  backLink: string; 
+  backText: string 
 }) {
-  const { "product-id": productId } = await params;
-  
-  const id = parseInt(productId);
-  if (isNaN(id)) {
-    notFound();
-  }
-
-  const product = getProductById(id);
-  
-  if (!product) {
-    notFound();
-  }
-
   return (
     <div className="max-w-5xl mx-auto">
-      <Link href="/product-list" className="inline-block mb-8 text-blue-900 font-medium hover:underline">
-        ← Powrót do listy produktów
+      <Link href={backLink} className="inline-block mb-8 text-blue-900 font-medium hover:underline">
+        ← {backText}
       </Link>
 
       <div className="bg-white rounded-lg shadow-lg p-8">
@@ -57,7 +47,7 @@ export default async function ProductDetailPage({
                 <span className="text-gray-800">{product.code}</span>
               </div>
               <div className="flex justify-between py-2">
-                <span className="font-semibold text-gray-600">Typ:</span>
+                <span className="font-semibold text-gray-600">Kategoria:</span>
                 <span className="text-gray-800">{product.type}</span>
               </div>
               <div className="flex justify-between py-2">
@@ -76,7 +66,7 @@ export default async function ProductDetailPage({
               {product.price.toFixed(2)} zł
             </div>
 
-            <div className={`inline-block px-4 py-2 rounded-full font-semibold text-sm mt-4 ${
+            <div className={`inline-block px-4 py-2 rounded-full font-semibold text-sm mt-4 w-fit ${
               product.amount > 0 
                 ? 'bg-green-100 text-green-800' 
                 : 'bg-red-100 text-red-800'

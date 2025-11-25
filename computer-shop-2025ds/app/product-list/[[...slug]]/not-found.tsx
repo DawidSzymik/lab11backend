@@ -6,13 +6,10 @@ export default function ProductNotFound() {
       <div className="text-center max-w-2xl">
         <h1 className="text-8xl font-bold text-blue-900 mb-4">404</h1>
         <h2 className="text-3xl font-semibold text-gray-700 mb-4">
-          Produkt nie został znaleziony
+          Nie znaleziono
         </h2>
         <p className="text-lg text-gray-600 mb-4 leading-relaxed">
-          Produkt o podanym identyfikatorze nie istnieje w naszej bazie danych.
-        </p>
-        <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-          Może został usunięty lub podano nieprawidłowy adres.
+          Kategoria lub produkt o podanych parametrach nie istnieje.
         </p>
         <Link 
           href="/product-list" 

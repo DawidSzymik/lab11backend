@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllProductsAlphabetically, getAllProductsByNewest } from '@/lib/products';
 
-export default function ProductList() {
+export default function MainProductList() {
   const [sortBy, setSortBy] = useState<"alphabetical" | "newest">("alphabetical");
   const [showAvailableOnly, setShowAvailableOnly] = useState(false);
 
@@ -17,10 +17,27 @@ export default function ProductList() {
     displayedProducts = displayedProducts.filter(p => p.amount > 0);
   }
 
+  const categories = Array.from(new Set(displayedProducts.map(p => p.type)));
+
   return (
     <div>
       <h2 className="text-3xl font-bold mb-6 text-blue-900">Lista produktów</h2>
       
+      <div className="mb-8">
+        <h3 className="text-xl font-semibold mb-4 text-gray-700">Przeglądaj według kategorii:</h3>
+        <div className="flex flex-wrap gap-3">
+          {categories.map(category => (
+            <Link
+              key={category}
+              href={`/product-list/${category}`}
+              className="px-6 py-3 bg-blue-900 text-white rounded-lg font-semibold hover:bg-blue-800 transition-all hover:-translate-y-1"
+            >
+              {category}
+            </Link>
+          ))}
+        </div>
+      </div>
+
       <div className="flex gap-8 mb-8 p-4 bg-gray-100 rounded-lg">
         <div className="flex items-center gap-2">
           <label htmlFor="sort" className="font-medium">Sortuj:</label>
