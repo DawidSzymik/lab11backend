@@ -8,13 +8,14 @@ export default function MainHeader() {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center hover:opacity-80 transition">
-            <Image
-              src="/pk-logo.svg"
-              alt="Politechnika Krakowska"
-              width={50}
-              height={50}
-              className="mr-3"
-            />
+            <div className="bg-white rounded-lg p-2 mr-3">
+              <Image
+                src="/pk-logo.svg"
+                alt="Politechnika Krakowska"
+                width={40}
+                height={40}
+              />
+            </div>
             <span className="text-xl font-bold text-white">Computer Shop</span>
           </Link>
 
