@@ -1,5 +1,4 @@
 import Link from "next/link";
-import styles from "./footer.module.css";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -10,26 +9,28 @@ export default function Footer() {
   });
 
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
-        <div className={styles.info}>
-          <p>
-            © {currentYear} Computer Shop - Autor: [Twoje Imię i Nazwisko]
-          </p>
-          <p className={styles.date}>
-            Aktualna data: {currentDate}
-          </p>
-        </div>
-        
-        <div>
-          <Link 
-            href="https://pk.edu.pl" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.link}
-          >
-            Politechnika Krakowska im. Tadeusza Kościuszki
-          </Link>
+    <footer className="bg-gray-800 text-white mt-auto">
+      <div className="container mx-auto px-4 py-6">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <p className="text-sm">
+              © {currentYear} Computer Shop - Autor: [Twoje Imię i Nazwisko]
+            </p>
+            <p className="text-xs text-gray-400 mt-1">
+              Aktualna data: {currentDate}
+            </p>
+          </div>
+          
+          <div>
+            <Link 
+              href="https://pk.edu.pl" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 transition text-sm"
+            >
+              Politechnika Krakowska im. Tadeusza Kościuszki
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
