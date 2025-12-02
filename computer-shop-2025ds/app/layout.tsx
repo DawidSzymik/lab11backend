@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import './global.css';
-import Link from 'next/link';
+import "./global.css";
+import MainHeader from "@/components/main-header";
+import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Sklep Komputerowy 2025DS",
-  description: "Sklep komputerowy stworzony przez Dawid Szymik",
+  title: "Computer Shop",
+  description: "NextJS Labs of BackEnd Programming",
 };
 
 export default function RootLayout({
@@ -13,25 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>
-        <div id="page">
-          <header id="main-header">
-            <div id="logo">
-              <Link href="/">Sklep Komputerowy</Link>
-            </div>
-            <nav>
-              <ul>
-                <Link href="/">Strona główna</Link>
-                <Link href="/product-list">Produkty</Link>
-                <Link href="/basket">Koszyk</Link>
-                <Link href="/order-history">Historia</Link>
-                <Link href="/about">O sklepie</Link>
-              </ul>
-            </nav>
-          </header>
+    <html lang="pl">
+      <body className="flex flex-col min-h-screen">
+        <MainHeader />
+        <main className="flex-grow container mx-auto px-4 py-8">
           {children}
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   );

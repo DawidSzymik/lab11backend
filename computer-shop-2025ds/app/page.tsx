@@ -6,7 +6,7 @@ export default function Home() {
       <main id="home">
         <Image
           className="logo"
-          src="/politechnika-krakowska-logo.svg"
+          src="/pk-logo.svg"
           alt="Logo Politechniki Krakowskiej"
           width={100}
           height={100}

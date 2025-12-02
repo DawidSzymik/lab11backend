@@ -1,0 +1,52 @@
+.footer {
+  background-color: #1f2937;
+  color: white;
+  margin-top: auto;
+  padding: 1.5rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.info {
+  margin-bottom: 1rem;
+}
+
+.info p {
+  font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.date {
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.link {
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #93c5fd;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .info {
+    margin-bottom: 1rem;
+  }
+}
