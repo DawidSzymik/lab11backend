@@ -1,12 +1,9 @@
 import { PrismaClient } from '@prisma/client';
-import productsData from '../data/products.json';
 
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Starting seed...');
-
-  // 1. Wyczyść istniejące dane
+  // Clear existing data
   await prisma.orderItem.deleteMany();
   await prisma.order.deleteMany();
   await prisma.cartItem.deleteMany();
@@ -15,132 +12,146 @@ async function main() {
   await prisma.category.deleteMany();
   await prisma.user.deleteMany();
 
-  // 2. Utwórz kategorie
-  const categories = ['procesor', 'karta graficzna', 'pamięć ram', 'dysk'];
-  const categoryRecords = await Promise.all(
-    categories.map((name) =>
-      prisma.category.create({
-        data: { name },
-      })
-    )
-  );
-  console.log(`✅ Utworzono ${categoryRecords.length} kategorii`);
+  console.log('Cleared existing data');
 
-  // 3. Mapowanie kategorii
-  const categoryMap = Object.fromEntries(
-    categoryRecords.map((cat) => [cat.name, cat.id])
-  );
+  // Create categories
+  const categories = await Promise.all([
+    prisma.category.create({ data: { name: 'Laptopy' } }),
+    prisma.category.create({ data: { name: 'Komputery' } }),
+    prisma.category.create({ data: { name: 'Monitory' } }),
+    prisma.category.create({ data: { name: 'Peryferia' } }),
+  ]);
 
-  // 4. Importuj produkty z data/products.json
-  for (const product of productsData) {
-    await prisma.product.create({
+  console.log('Created categories');
+
+  // Create products
+  const products = await Promise.all([
+    prisma.product.create({
       data: {
-        code: product.code,
-        name: product.name,
-        description: product.description,
-        price: product.price,
-        stock: product.amount,
-        imageUrl: product.image,
-        categoryId: categoryMap[product.type] || categoryMap['procesor'],
+        code: 'LAP-001',
+        name: 'Laptop Dell XPS 13',
+        description: 'Ultrabook z procesorem Intel i7',
+        price: 4999.99,
+        stock: 15,
+        imageUrl: '/images/laptop1.jpg',
+        categoryId: categories[0].id,
       },
-    });
-  }
-  console.log(`✅ Zaimportowano ${productsData.length} produktów`);
+    }),
+    prisma.product.create({
+      data: {
+        code: 'LAP-002',
+        name: 'Laptop HP Pavilion',
+        description: 'Laptop do codziennego użytku',
+        price: 2999.99,
+        stock: 20,
+        imageUrl: '/images/laptop2.jpg',
+        categoryId: categories[0].id,
+      },
+    }),
+    prisma.product.create({
+      data: {
+        code: 'PC-001',
+        name: 'Komputer Gamingowy RTX',
+        description: 'Wydajny komputer do gier',
+        price: 7999.99,
+        stock: 8,
+        imageUrl: '/images/pc1.jpg',
+        categoryId: categories[1].id,
+      },
+    }),
+    prisma.product.create({
+      data: {
+        code: 'MON-001',
+        name: 'Monitor LG 27"',
+        description: 'Monitor 4K IPS',
+        price: 1499.99,
+        stock: 25,
+        imageUrl: '/images/monitor1.jpg',
+        categoryId: categories[2].id,
+      },
+    }),
+    prisma.product.create({
+      data: {
+        code: 'PER-001',
+        name: 'Klawiatura mechaniczna',
+        description: 'RGB, przełączniki Cherry MX',
+        price: 399.99,
+        stock: 50,
+        imageUrl: '/images/keyboard1.jpg',
+        categoryId: categories[3].id,
+      },
+    }),
+  ]);
 
-  // 5. Utwórz użytkownika
+  console.log('Created products');
+
+  // Create a test user
   const user = await prisma.user.create({
     data: {
-      email: 'dawid.szymik@example.com',
-      name: 'Dawid Szymik',
-      password: '$2a$10$abcdefghijklmnopqrstuv', // hash bcrypt (przykładowy)
+      email: 'test@example.com',
+      name: 'Test User',
     },
   });
-  console.log(`✅ Utworzono użytkownika: ${user.email}`);
 
-  // 6. Utwórz koszyk z 3 produktami
+  console.log('Created test user');
+
+  // Create cart for user
   const cart = await prisma.cart.create({
     data: {
       userId: user.id,
+    },
+  });
+
+  console.log('Created cart');
+
+  // Add items to cart
+  await Promise.all([
+    prisma.cartItem.create({
+      data: {
+        cartId: cart.id,
+        productId: products[0].id,
+        quantity: 1,
+      },
+    }),
+    prisma.cartItem.create({
+      data: {
+        cartId: cart.id,
+        productId: products[3].id,
+        quantity: 2,
+      },
+    }),
+  ]);
+
+  console.log('Created cart items');
+
+  // Create a test order
+  const order = await prisma.order.create({
+    data: {
+      orderNumber: `ORD-${Date.now()}`,
+      status: 'PENDING',
+      totalAmount: 5999.97,
+      userId: user.id,
       items: {
         create: [
-          { productId: 1, quantity: 1 }, // Intel Core i9-14900K
-          { productId: 3, quantity: 1 }, // NVIDIA RTX 4090
-          { productId: 5, quantity: 2 }, // Corsair Vengeance RGB 32GB
+          {
+            productId: products[0].id,
+            quantity: 1,
+            priceAtPurchase: products[0].price,
+            productName: products[0].name,
+            productCode: products[0].code,
+          },
         ],
       },
     },
   });
-  console.log(`✅ Utworzono koszyk z 3 produktami`);
 
-  // 7. Utwórz 4 przeszłe zamówienia
-  const orders = [
-    {
-      orderNumber: 'ORD-2024-001',
-      status: 'DELIVERED',
-      products: [
-        { productId: 2, quantity: 1, price: 2699.99 }, // AMD Ryzen 9 7950X
-        { productId: 7, quantity: 1, price: 999.99 },  // Samsung 990 PRO 2TB
-      ],
-    },
-    {
-      orderNumber: 'ORD-2024-002',
-      status: 'DELIVERED',
-      products: [
-        { productId: 4, quantity: 1, price: 4999.99 }, // AMD Radeon RX 7900 XTX
-        { productId: 6, quantity: 1, price: 1299.99 }, // G.Skill Trident Z5 64GB
-      ],
-    },
-    {
-      orderNumber: 'ORD-2024-003',
-      status: 'SHIPPED',
-      products: [
-        { productId: 9, quantity: 1, price: 1899.99 },  // Intel Core i7-14700K
-        { productId: 13, quantity: 2, price: 599.99 },  // Kingston Fury Beast 32GB
-      ],
-    },
-    {
-      orderNumber: 'ORD-2024-004',
-      status: 'PROCESSING',
-      products: [
-        { productId: 11, quantity: 1, price: 5499.99 }, // NVIDIA RTX 4080
-        { productId: 15, quantity: 1, price: 749.99 },  // Crucial P5 Plus 2TB
-        { productId: 21, quantity: 1, price: 649.99 },  // TeamGroup T-Force Delta RGB
-      ],
-    },
-  ];
-
-  for (const orderData of orders) {
-    const totalAmount = orderData.products.reduce(
-      (sum, p) => sum + p.price * p.quantity,
-      0
-    );
-
-    await prisma.order.create({
-      data: {
-        orderNumber: orderData.orderNumber,
-        status: orderData.status as any,
-        totalAmount,
-        userId: user.id,
-        items: {
-          create: orderData.products.map((p) => ({
-            productId: p.productId,
-            quantity: p.quantity,
-            priceAtPurchase: p.price,
-            productName: productsData[p.productId - 1].name,
-            productCode: productsData[p.productId - 1].code,
-          })),
-        },
-      },
-    });
-  }
-  console.log(`✅ Utworzono 4 zamówienia`);
-
-  console.log('🎉 Seed zakończony pomyślnie!');
+  console.log('Created test order');
+  console.log('Seed completed successfully!');
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Błąd seedingu:', e);
+    console.error(e);
     process.exit(1);
   })
   .finally(async () => {
