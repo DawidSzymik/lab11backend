@@ -168,3 +168,69 @@ export async function addToCart(userId: string, productCode: string, quantity: n
   revalidatePath('/basket');
   return { success: true, message: 'Produkt dodany do koszyka' };
 }
+export async function removeFromCart(userId: string, productId: number) {
+  const cart = await prisma.cart.findUnique({
+    where: { userId },
+  });
+
+  if (!cart) {
+    throw new Error('Koszyk nie istnieje');
+  }
+
+  await prisma.cartItem.deleteMany({
+    where: {
+      cartId: cart.id,
+      productId: productId,
+    },
+  });
+
+  revalidatePath('/basket');
+  return { success: true, message: 'Produkt usunięty z koszyka' };
+}
+
+export async function updateCartItemQuantity(userId: string, productId: number, quantity: number) {
+  if (quantity < 1) {
+    throw new Error('Ilość musi być większa od 0');
+  }
+
+  const cart = await prisma.cart.findUnique({
+    where: { userId },
+  });
+
+  if (!cart) {
+    throw new Error('Koszyk nie istnieje');
+  }
+
+  const product = await prisma.product.findUnique({
+    where: { id: productId },
+  });
+
+  if (!product) {
+    throw new Error('Produkt nie istnieje');
+  }
+
+  if (product.stock < quantity) {
+    throw new Error(`Dostępne tylko ${product.stock} szt.`);
+  }
+
+  const cartItem = await prisma.cartItem.findUnique({
+    where: {
+      cartId_productId: {
+        cartId: cart.id,
+        productId: productId,
+      },
+    },
+  });
+
+  if (!cartItem) {
+    throw new Error('Produkt nie znajduje się w koszyku');
+  }
+
+  await prisma.cartItem.update({
+    where: { id: cartItem.id },
+    data: { quantity },
+  });
+
+  revalidatePath('/basket');
+  return { success: true, message: 'Ilość zaktualizowana' };
+}

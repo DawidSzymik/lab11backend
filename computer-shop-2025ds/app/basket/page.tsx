@@ -3,6 +3,7 @@ import { SignIn, SignOut } from "@/components/auth-components";
 import { getCartWithItems, getCartTotal, getAllUsersWithCarts, transferCart } from "@/lib/actions/cart";
 import { redirect } from "next/navigation";
 import Image from "next/image";
+import CartItemControls from "@/components/cart-item-controls";
 
 export default async function BasketPage() {
   const session = await auth();
@@ -18,14 +19,14 @@ export default async function BasketPage() {
       </div>
     );
   }
+  const userId = session.user.id;
 
-  const cart = await getCartWithItems(session.user.id);
-  const total = await getCartTotal(session.user.id);
+  const cart = await getCartWithItems(userId); 
+  const total = await getCartTotal(userId);     
   const allUsers = await getAllUsersWithCarts();
 
   return (
     <div className="container mx-auto px-4 py-8">
-      
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Koszyk</h1>
         <div className="flex items-center gap-4">
@@ -44,27 +45,42 @@ export default async function BasketPage() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-2 space-y-4">
             {cart.items.map((item) => (
-              <div key={item.id} className="bg-white border border-gray-200 rounded-lg p-4 flex gap-4">
-                {item.product.imageUrl && (
-                  <Image
-                    src={item.product.imageUrl}
-                    alt={item.product.name}
-                    width={100}
-                    height={100}
-                    className="object-contain rounded"
-                  />
-                )}
-                <div className="flex-grow">
-                  <h3 className="font-bold text-lg">{item.product.name}</h3>
-                  <p className="text-gray-600 text-sm">{item.product.category.name}</p>
-                  <p className="text-sm text-gray-500 mt-1">{item.product.description}</p>
+              <div key={item.id} className="bg-white border border-gray-200 rounded-lg p-4">
+                <div className="flex gap-4 mb-4">
+                  {item.product.imageUrl && (
+                    <Image
+                      src={item.product.imageUrl}
+                      alt={item.product.name}
+                      width={100}
+                      height={100}
+                      className="object-contain rounded"
+                    />
+                  )}
+                  <div className="flex-grow">
+                    <h3 className="font-bold text-lg">{item.product.name}</h3>
+                    <p className="text-gray-600 text-sm">{item.product.category.name}</p>
+                    <p className="text-sm text-gray-500 mt-1">{item.product.description}</p>
+                    <p className="text-sm text-gray-500 mt-2">
+                      Dostępne: {item.product.stock} szt.
+                    </p>
+                  </div>
+                  <div className="text-right">
+                    <p className="font-bold text-lg">{Number(item.product.price).toFixed(2)} zł</p>
+                    <p className="text-gray-600 text-sm">za sztukę</p>
+                    <p className="font-semibold mt-2 text-green-600 text-xl">
+                      {(Number(item.product.price) * item.quantity).toFixed(2)} zł
+                    </p>
+                  </div>
                 </div>
-                <div className="text-right">
-                  <p className="font-bold text-lg">{Number(item.product.price).toFixed(2)} zł</p>
-                  <p className="text-gray-600">Ilość: {item.quantity}</p>
-                  <p className="font-semibold mt-2">
-                    {(Number(item.product.price) * item.quantity).toFixed(2)} zł
-                  </p>
+                
+                {/* Kontrolki ilości i usuwania */}
+                <div className="border-t pt-4">
+                  <CartItemControls
+  userId={userId}
+  productId={item.product.id}
+  currentQuantity={item.quantity}
+  maxStock={item.product.stock}
+/>
                 </div>
               </div>
             ))}
