@@ -1,13 +1,26 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { Product } from '@/lib/products';
+
+type ProductWithCategory = {
+  id: number;
+  code: string;
+  name: string;
+  description: string | null;
+  price: number;
+  stock: number;
+  imageUrl: string | null;
+  category: {
+    id: number;
+    name: string;
+  };
+};
 
 export default function CategoryList({ 
   category, 
   products 
 }: { 
   category: string; 
-  products: Product[] 
+  products: ProductWithCategory[] 
 }) {
   return (
     <div>
@@ -29,19 +42,20 @@ export default function CategoryList({
             className="border border-gray-200 rounded-lg p-6 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
           >
             <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-4">
-              <Image 
-                src={product.image} 
-                alt={product.name}
-                width={200}
-                height={200}
-                className="object-contain"
-              />
+              {product.imageUrl && (
+                <img 
+                  src={product.imageUrl} 
+                  alt={product.name}
+                  className="object-contain"
+                  style={{ width: '200px', height: '200px' }}
+                />
+              )}
             </div>
             <h3 className="text-xl font-bold text-blue-900 mb-2">{product.name}</h3>
-            <p className="text-gray-600 text-sm mb-2">Typ: {product.type}</p>
-            <p className="text-2xl font-bold text-green-600 mb-2">{product.price.toFixed(2)} zł</p>
-            <p className={`text-sm font-medium ${product.amount > 0 ? 'text-green-700' : 'text-red-700'}`}>
-              Stan: {product.amount > 0 ? `${product.amount} szt.` : 'Brak na stanie'}
+            <p className="text-gray-600 text-sm mb-2">Kategoria: {product.category.name}</p>
+            <p className="text-2xl font-bold text-green-600 mb-2">{Number(product.price).toFixed(2)} zł</p>
+            <p className={`text-sm font-medium ${product.stock > 0 ? 'text-green-700' : 'text-red-700'}`}>
+              Stan: {product.stock > 0 ? `${product.stock} szt.` : 'Brak na stanie'}
             </p>
             <p className="text-gray-700 mt-3 text-sm line-clamp-2">{product.description}</p>
           </Link>

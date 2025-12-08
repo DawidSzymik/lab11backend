@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { getProductById, getProductsByCategory } from '@/lib/products';
+import { getProductById, getProductsByCategory } from '@/lib/db-products';  // ZMIEŃ TO
 import MainProductList from './MainProductList';
 import CategoryList from './CategoryList';
 import ProductDetail from './ProductDetail';
@@ -19,7 +19,7 @@ export default async function CatchAllProductPage({
     const maybeId = parseInt(slug[0]);
     
     if (!isNaN(maybeId)) {
-      const product = getProductById(maybeId);
+      const product = await getProductById(maybeId);  // DODAJ await
       
       if (!product) {
         notFound();
@@ -29,7 +29,7 @@ export default async function CatchAllProductPage({
     }
     
     const category = slug[0];
-    const products = getProductsByCategory(category);
+    const products = await getProductsByCategory(category);  // DODAJ await
     
     if (products.length === 0) {
       notFound();
@@ -46,9 +46,9 @@ export default async function CatchAllProductPage({
       notFound();
     }
 
-    const product = getProductById(productId);
+    const product = await getProductById(productId);  // DODAJ await
     
-    if (!product || product.type !== category) {
+    if (!product || product.category.name !== category) {  // ZMIEŃ product.type na product.category.name
       notFound();
     }
 

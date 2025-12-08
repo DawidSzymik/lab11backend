@@ -113,3 +113,58 @@ export async function transferCart(fromUserId: string, toUserId: string) {
 
   revalidatePath('/basket');
 }
+export async function addToCart(userId: string, productCode: string, quantity: number = 1) {
+  // Znajdź produkt po kodzie
+  const product = await prisma.product.findUnique({
+    where: { code: productCode },
+  });
+
+  if (!product) {
+    throw new Error('Produkt nie istnieje');
+  }
+
+  if (product.stock < quantity) {
+    throw new Error('Niewystarczająca ilość produktu na magazynie');
+  }
+
+  // Znajdź lub utwórz koszyk
+  let cart = await prisma.cart.findUnique({
+    where: { userId },
+  });
+
+  if (!cart) {
+    cart = await prisma.cart.create({
+      data: { userId },
+    });
+  }
+
+  // Sprawdź czy produkt już jest w koszyku
+  const existingItem = await prisma.cartItem.findUnique({
+    where: {
+      cartId_productId: {
+        cartId: cart.id,
+        productId: product.id,
+      },
+    },
+  });
+
+  if (existingItem) {
+    // Zwiększ ilość
+    await prisma.cartItem.update({
+      where: { id: existingItem.id },
+      data: { quantity: existingItem.quantity + quantity },
+    });
+  } else {
+    // Dodaj nowy produkt
+    await prisma.cartItem.create({
+      data: {
+        cartId: cart.id,
+        productId: product.id,
+        quantity,
+      },
+    });
+  }
+
+  revalidatePath('/basket');
+  return { success: true, message: 'Produkt dodany do koszyka' };
+}
