@@ -19,15 +19,17 @@ export default function ProductDetail({
 
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="flex items-center justify-center bg-gray-100 rounded-lg p-8">
-            <Image
-              src={product.image}
-              alt={product.name}
-              width={400}
-              height={400}
-              className="max-w-full h-auto rounded-lg"
-            />
-          </div>
+          <Link href={`/product-list/image/${product.id}`}>
+  <div className="flex items-center justify-center bg-gray-100 rounded-lg p-8 cursor-pointer hover:bg-gray-200 transition">
+    <Image
+      src={product.image}
+      alt={product.name}
+      width={400}
+      height={400}
+      className="max-w-full h-auto rounded-lg"
+    />
+  </div>
+</Link>
 
           <div className="flex flex-col gap-4">
             <h1 className="text-4xl font-bold text-blue-900">{product.name}</h1>

@@ -1,7 +1,16 @@
 export default function ProductListLayout({
-  children,
+  products,
+  discounts,
 }: {
-  children: React.ReactNode;
+  products: React.ReactNode;
+  discounts: React.ReactNode;
 }) {
-  return <>{children}</>;
+  return (
+    <div>
+      {discounts}
+      <div className="mt-8">
+        {products}
+      </div>
+    </div>
+  );
 }
