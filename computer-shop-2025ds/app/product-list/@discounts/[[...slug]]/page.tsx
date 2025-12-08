@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { getAllProductsAlphabetically } from '@/lib/products';
+import { getAllProducts } from '@/lib/db-products';
 
 export default async function DiscountsPage({
   params,
@@ -11,9 +10,9 @@ export default async function DiscountsPage({
   
   // Pokazuj promocje TYLKO na:
   // - głównej stronie (/product-list)
-  // - stronie kategorii (/product-list/dysk)
+  // - stronie kategorii (/product-list/procesor)
   // NIE pokazuj na:
-  // - stronie produktu (/product-list/123 lub /product-list/dysk/123)
+  // - stronie produktu (/product-list/123 lub /product-list/procesor/123)
   
   if (slug && slug.length > 0) {
     // Jeśli slug[0] jest liczbą = strona produktu
@@ -31,7 +30,7 @@ export default async function DiscountsPage({
     // Pokazuj promocje
   }
 
-  const allProducts = getAllProductsAlphabetically();
+  const allProducts = await getAllProducts();
   
   // Wybierz 3 losowe produkty
   const shuffled = [...allProducts].sort(() => 0.5 - Math.random());
@@ -45,48 +44,51 @@ export default async function DiscountsPage({
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {randomProducts.map(product => {
-          const originalPrice = product.price;
-          const discountedPrice = originalPrice * 0.9;
+          const discountedPrice = Number(product.price) * 0.9;
           
           return (
-            <Link
-              key={product.id}
+            <Link 
+              key={product.id} 
               href={`/product-list/${product.id}`}
-              className="bg-white rounded-lg p-6 border-2 border-red-300 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+              className="bg-white border-2 border-red-300 rounded-lg p-4 hover:shadow-xl transition-all hover:-translate-y-1"
             >
-              <div className="relative">
-                <div className="absolute top-0 right-0 bg-red-600 text-white px-3 py-1 rounded-bl-lg font-bold">
+              <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-4 relative">
+                <div className="absolute top-2 right-2 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-bold">
                   -10%
                 </div>
-                <div className="flex justify-center mb-4 bg-gray-50 rounded-lg p-4">
-                  <Image
-                    src={product.image}
+                {product.imageUrl && (
+                  <img 
+                    src={product.imageUrl} 
                     alt={product.name}
-                    width={180}
-                    height={180}
                     className="object-contain"
+                    style={{ width: '150px', height: '150px' }}
                   />
-                </div>
+                )}
               </div>
               
-              <h3 className="text-lg font-bold text-gray-800 mb-2 line-clamp-2">
-                {product.name}
-              </h3>
+              <h3 className="text-lg font-bold text-blue-900 mb-2">{product.name}</h3>
+              <p className="text-gray-600 text-sm mb-2">Kategoria: {product.category.name}</p>
               
               <div className="flex items-center gap-2 mb-2">
-                <span className="text-gray-500 line-through text-lg">
-                  {originalPrice.toFixed(2)} zł
+                <span className="text-lg text-gray-400 line-through">
+                  {Number(product.price).toFixed(2)} zł
                 </span>
                 <span className="text-2xl font-bold text-red-600">
                   {discountedPrice.toFixed(2)} zł
                 </span>
               </div>
               
-              <p className="text-sm text-gray-600">Typ: {product.type}</p>
+              <p className={`text-sm font-medium ${product.stock > 0 ? 'text-green-700' : 'text-red-700'}`}>
+                {product.stock > 0 ? `✓ Dostępny (${product.stock} szt.)` : '✗ Brak na stanie'}
+              </p>
             </Link>
           );
         })}
       </div>
+      
+      <p className="text-center mt-6 text-gray-600 text-sm">
+        *Promocja obowiązuje do wyczerpania zapasów
+      </p>
     </div>
   );
 }
