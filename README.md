@@ -1,2 +1,27 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/0LCD-BK0)
-[![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-2972f46106e565e64193e422d61a12cf1da4916b45550586e14ef0a7c637dd04.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=21716493)
+# NextJS Labs of BackEnd Programming
+
+## Info
+
+- author: Dawid Szymik
+- year: 2025
+- group: 14K2
+- computer laboratory team: K03
+- link to app on Vercel platform: https://lab14backend.vercel.app
+
+## Content
+
+### Lab 10
+
+The aim of the lab is to prepare the environment for creating a full-stack Next.js application, learn the basics of this framework and become familiar with handling routes.
+
+### Lab 11
+
+The goal of this lab is to use advanced page types (including dynamic) in Next.js and apply Tailwind CSS to style the application.
+
+### Lab 12
+
+The goal of this lab is to use Prisma's ORM (Object-Relational Mapping) to interact with a database (in this case, Postgres) as a source of truth for an application created in Next.js.
+
+### Lab 13
+
+The goal of this lab is to implement authentication in the Next.js application using the external Auth.js library. We need to add the ability to log in using a GitHub account and display the contents of their shopping cart to that user.
